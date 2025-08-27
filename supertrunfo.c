@@ -1,6 +1,16 @@
 #include <stdio.h>
 #include <locale.h>
 
+float calcularDeP(float arg1, float arg2) {
+
+    float resultado;
+
+    resultado = arg1 / arg2;
+
+    return (float) resultado;
+
+}
+
 int main() {
 
     setlocale(LC_ALL,"Portuguese");
@@ -129,7 +139,9 @@ int main() {
     printf("População: %i\n", populacaoA);
     printf("Área: %.2f km²\n", areaA);
     printf("PIB: %.2f bilhões de reais\n", pibA);
-    printf("Número de Pontos Turísticos: %i\n\n\n", turisticoA);
+    printf("Número de Pontos Turísticos: %i\n", turisticoA);
+    printf("Densidade Populacional: %.2f hab/km²\n", calcularDeP(populacaoA, areaA));
+    printf("PIB per Capita: %.2f reais\n\n\n", calcularDeP((float) populacaoA, pibA));
 
     // Separar
 
@@ -144,7 +156,11 @@ int main() {
     printf("População: %i\n", populacaoB);
     printf("Área: %.2f km²\n", areaB);
     printf("PIB: %.2f bilhões de reais\n", pibB);
-    printf("Número de Pontos Turísticos: %i\n\n\n", turisticoB);
+    printf("Número de Pontos Turísticos: %i\n", turisticoB);
+    printf("Densidade Populacional: %.2f hab/km²\n", calcularDeP(populacaoB, areaB));
+    printf("PIB per Capita: %.2f reais\n\n\n", calcularDeP((float) populacaoB, pibB));
+
+
 
     return 0;
 
