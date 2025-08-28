@@ -24,7 +24,8 @@ int main() {
     char cidadeT[50];
 
     // Numero de Habitantes
-    int populacaoA, populacaoB;
+    unsigned long int populacaoA;
+    unsigned long int populacaoB;
 
     // Codigo da Ca1ta
 
@@ -159,6 +160,34 @@ int main() {
     printf("Número de Pontos Turísticos: %i\n", turisticoB);
     printf("Densidade Populacional: %.2f hab/km²\n", calcularDeP(populacaoB, areaB));
     printf("PIB per Capita: %.2f reais\n\n\n", calcularDeP((float) populacaoB, pibB));
+
+    // Sistema Super Poder
+
+    float pibPcA = calcularDeP((float) populacaoA, pibA);
+    float pibPcB = calcularDeP((float) populacaoB, pibB);
+    
+
+    // Variaveis
+
+    float superPoderA = (float) populacaoA + areaA + pibA + (float) turisticoA + pibPcA ;
+    float superPoderB = (float) populacaoB + areaB + pibB + (float) turisticoB + pibPcB;
+
+    float densidadeA = calcularDeP((float)populacaoA, areaA);
+    float densidadeB = calcularDeP((float)populacaoB, areaB);
+
+    // Resultados
+
+    
+    // ----------- Comparações -----------
+    printf("\n\n=== Comparação de Cartas ===\n\n");
+
+    printf("População: Carta 1 venceu (%d)\n", populacaoA > populacaoB);
+    printf("Área: Carta 1 venceu (%d)\n", areaA > areaB);
+    printf("PIB: Carta 1 venceu (%d)\n", pibA > pibB);
+    printf("Pontos Turísticos: Carta 1 venceu (%d)\n", turisticoA > turisticoB);
+    printf("Densidade Populacional: Carta 1 venceu (%d)\n", densidadeA < densidadeB); // menor vence
+    printf("PIB per Capita: Carta 1 venceu (%d)\n", pibPcA > pibPcB);
+    printf("Super Poder: Carta 1 venceu (%d)\n", superPoderA > superPoderB);
 
 
 
