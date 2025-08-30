@@ -16,8 +16,8 @@ int main() {
     setlocale(LC_ALL,"Portuguese");
 
     // Letra referente aos Estados
-    char estado1 = 'A';
-    char estado2 = 'B';
+    char estado1[50];
+    char estado2[50];
 
     // Nome da Cidade
     char cidadeO[50];
@@ -55,13 +55,18 @@ int main() {
 
     //  -= Scan Estado (1) =-
 
+    // Nome do Estado
+
+    printf("Digite o nome do Estado (1): ");
+    scanf(" %49[^\n]", estado1);
+    printf("%s\n\n", estado1);
+
 
     // Nome da Cidade 
 
     printf("Digite o nome da Cidade (1): ");
     scanf(" %49[^\n]", cidadeO);
     printf("%s\n\n", cidadeO);
-;
     // População
 
     printf("Quanto de população %s possui atualmente? ", cidadeO);
@@ -94,6 +99,9 @@ int main() {
 
     //  -= Scan Estado (2) =-
 
+    printf("Digite o nome do Estado (2): ");
+    scanf(" %49[^\n]", estado2);
+    printf("%s\n\n", estado2);
 
     // Nome da Cidade 
 
@@ -134,7 +142,7 @@ int main() {
     // Resultado ( Carta 1  )
 
     printf("Carta 1: \n");
-    printf("Estado: %c\n", estado1);
+    printf("Estado: %s\n", estado1);
     printf("Código: %s\n", codigoCartaO);
     printf("Nome da Cidade: %s\n", cidadeO);
     printf("População: %i\n", populacaoA);
@@ -151,7 +159,7 @@ int main() {
     // Resultado ( Carta 2  )
 
     printf("Carta 2: \n");
-    printf("Estado: %c\n", estado2);
+    printf("Estado: %s\n", estado2);
     printf("Código: %s\n", codigoCartaT);
     printf("Nome da Cidade: %s\n", cidadeT);
     printf("População: %i\n", populacaoB);
@@ -189,7 +197,17 @@ int main() {
     printf("PIB per Capita: Carta 1 venceu (%d)\n", pibPcA > pibPcB);
     printf("Super Poder: Carta 1 venceu (%d)\n", superPoderA > superPoderB);
 
+    // Comparação ( Maior População )
 
+    printf("\n\n=== Comparação (Maior População) ===\n\n\n");
+    printf("Carta 1 - %s (%s): %d\n",cidadeO,estado1,populacaoA);
+    printf("Carta 2 - %s (%s): %d\n",cidadeT,estado2,populacaoB);
+
+    if(populacaoA > populacaoB) {
+        printf("Resultado: Carta 1 (%s) venceu!",cidadeO);
+    } else {
+        printf("Resultado: Carta 2 (%s) venceu!",cidadeT);
+    }
 
     return 0;
 
