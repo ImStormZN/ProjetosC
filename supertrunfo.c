@@ -183,32 +183,60 @@ int main() {
     float densidadeA = calcularDeP((float)populacaoA, areaA);
     float densidadeB = calcularDeP((float)populacaoB, areaB);
 
+    
+    int opcao;
+
     // Resultados
 
-    
-    // ----------- Comparações -----------
-    printf("\n\n=== Comparação de Cartas ===\n\n");
+    printf("\n\n=== Menu Interativo ( Super Trunfo ) ===\n\n");
+    printf("(1) - População\n");
+    printf("(2) - Área\n");
+    printf("(3) - PIB\n");
+    printf("(4) - Número de pontos turísticos\n");
+    printf("(5) - Densidade demográfica\n");
+    scanf("%i", &opcao);
 
-    printf("População: Carta 1 venceu (%d)\n", populacaoA > populacaoB);
-    printf("Área: Carta 1 venceu (%d)\n", areaA > areaB);
-    printf("PIB: Carta 1 venceu (%d)\n", pibA > pibB);
-    printf("Pontos Turísticos: Carta 1 venceu (%d)\n", turisticoA > turisticoB);
-    printf("Densidade Populacional: Carta 1 venceu (%d)\n", densidadeA < densidadeB); // menor vence
-    printf("PIB per Capita: Carta 1 venceu (%d)\n", pibPcA > pibPcB);
-    printf("Super Poder: Carta 1 venceu (%d)\n", superPoderA > superPoderB);
 
     // Comparação ( Maior População )
 
-    printf("\n\n=== Comparação (Maior População) ===\n\n\n");
-    printf("Carta 1 - %s (%s): %d\n",cidadeO,estado1,populacaoA);
-    printf("Carta 2 - %s (%s): %d\n",cidadeT,estado2,populacaoB);
+    //printf("\n\n=== Comparação (Maior População) ===\n\n\n");
+    //printf("Carta 1 - %s (%s): %d\n",cidadeO,estado1,populacaoA);
+    //printf("Carta 2 - %s (%s): %d\n",cidadeT,estado2,populacaoB);
 
-    if(populacaoA > populacaoB) {
-        printf("Resultado: Carta 1 (%s) venceu!",cidadeO);
-    } else {
-        printf("Resultado: Carta 2 (%s) venceu!",cidadeT);
+
+
+
+    switch(opcao) {
+        case 1:
+            printf("Você escolheu a opção (1) - Comparação de Maior População\n");
+
+            if(populacaoA > populacaoB) {
+
+                printf("Carta 1 possui a maior população: %d", populacaoA);
+
+            } else {
+
+                printf("Carta 2 possui a maior população: %d", populacaoB);
+
+            }
+
+            break;
+        case 2:
+            printf("Você escolheu a opção (2) - Comparação de Maior Área");
+            break;
+        case 3:                         
+            printf("Você escolheu a opção (3) - Comparação de Maior PIB");
+            break;
+        case 4:
+            printf("Você escolheu a opção (4) - Comparação de Maior Número de pontos turísticos");
+            break;
+        case 5:
+            printf("Você escolheu a opção (5) - Comparação de Menor Densidade Demográfica");
+            break;
+        default:
+            printf("Opção indisponivel/inexistente!");
+            break;
     }
-
     return 0;
 
 }
