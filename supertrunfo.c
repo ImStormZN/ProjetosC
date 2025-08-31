@@ -194,6 +194,8 @@ int main() {
     printf("(3) - PIB\n");
     printf("(4) - Número de pontos turísticos\n");
     printf("(5) - Densidade demográfica\n");
+    printf("(6) - PIB per capita\n");
+    printf("Escolha a opção: ");
     scanf("%i", &opcao);
 
 
@@ -209,30 +211,87 @@ int main() {
     switch(opcao) {
         case 1:
             printf("Você escolheu a opção (1) - Comparação de Maior População\n");
-
+            printf("Carta 1 - %s (%s): %d\n",cidadeO,estado1,populacaoA);
+            printf("Carta 2 - %s (%s): %d\n",cidadeT,estado2,populacaoB);
             if(populacaoA > populacaoB) {
 
-                printf("Carta 1 possui a maior população: %d", populacaoA);
+                printf("Resultado: Carta 1 (%s) venceu!", cidadeO);
 
             } else {
 
-                printf("Carta 2 possui a maior população: %d", populacaoB);
+                printf("Resultado: Carta 2 (%s) venceu!", cidadeT);
 
             }
-
             break;
         case 2:
-            printf("Você escolheu a opção (2) - Comparação de Maior Área");
+            printf("Você escolheu a opção (2) - Comparação de Maior Área\n");
+            printf("Carta 1 - %s (%s): %.2f\n",cidadeO,estado1,areaA);
+            printf("Carta 2 - %s (%s): %.2f\n",cidadeT,estado2,areaB);
+            if(areaA > areaB) {
+
+                printf("Resultado: Carta 1 (%s) venceu!", cidadeO);
+
+            } else {
+
+                printf("Resultado: Carta 2 (%s) venceu!", cidadeT);
+
+            }
             break;
         case 3:                         
-            printf("Você escolheu a opção (3) - Comparação de Maior PIB");
+            printf("Você escolheu a opção (3) - Comparação de Maior PIB\n");
+            printf("Carta 1 - %s (%s): %.2f\n",cidadeO,estado1,pibA);
+            printf("Carta 2 - %s (%s): %.2f\n",cidadeT,estado2,pibA);
+            if(pibA > pibB) {
+
+                printf("Resultado: Carta 1 (%s) venceu!", cidadeO);
+
+            } else {
+
+                printf("Resultado: Carta 2 (%s) venceu!", cidadeT);
+
+            }
             break;
         case 4:
-            printf("Você escolheu a opção (4) - Comparação de Maior Número de pontos turísticos");
+            printf("Você escolheu a opção (4) - Comparação de Maior Número de pontos turísticos\n");
+            printf("Carta 1 - %s (%s): %d\n",cidadeO,estado1,turisticoA);
+            printf("Carta 2 - %s (%s): %d\n",cidadeT,estado2,turisticoB);
+            if(turisticoA > turisticoB) {
+
+                printf("Resultado: Carta 1 (%s) venceu!", cidadeO);
+
+            } else {
+
+                printf("Resultado: Carta 2 (%s) venceu!", cidadeT);
+
+            }
             break;
         case 5:
-            printf("Você escolheu a opção (5) - Comparação de Menor Densidade Demográfica");
+            printf("Você escolheu a opção (5) - Comparação de Menor Densidade Demográfica\n");
+            printf("Carta 1 - %s (%s): %.2f\n",cidadeO,estado1,densidadeA);
+            printf("Carta 2 - %s (%s): %.2f\n",cidadeT,estado2,densidadeB);
+            if(densidadeA < densidadeB) {
+
+                printf("Resultado: Carta 1 (%s) venceu!", cidadeO);
+
+            } else {
+
+                printf("Resultado: Carta 2 (%s) venceu!", cidadeT);
+
+            }
             break;
+        case 6:
+            printf("Você escolheu a opção (6) - Comparação de Maior PIB per capita\n");
+            printf("Carta 1 - %s (%s): %.2f\n",cidadeO,estado1,pibPcA);
+            printf("Carta 2 - %s (%s): %.2f\n",cidadeT,estado2,pibPcB);
+            if(pibPcA > pibPcB) {
+
+                printf("Resultado: Carta 1 (%s) venceu!", cidadeO);
+
+            } else {
+
+                printf("Resultado: Carta 2 (%s) venceu!", cidadeT);
+
+            }
         default:
             printf("Opção indisponivel/inexistente!");
             break;
