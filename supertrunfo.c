@@ -217,6 +217,10 @@ int main() {
 
                 printf("Resultado: Carta 1 (%s) venceu!", cidadeO);
 
+            } else if (populacaoA == populacaoB) {
+
+                printf("Resultado: Carta 1 (%s) empatou com Carta 2 (%s)!", cidadeO,cidadeT);
+
             } else {
 
                 printf("Resultado: Carta 2 (%s) venceu!", cidadeT);
@@ -231,6 +235,11 @@ int main() {
 
                 printf("Resultado: Carta 1 (%s) venceu!", cidadeO);
 
+            } else if (areaA == areaB) {
+
+                printf("Resultado: Carta 1 (%s) empatou com Carta 2 (%s)!", cidadeO,cidadeT);
+
+            
             } else {
 
                 printf("Resultado: Carta 2 (%s) venceu!", cidadeT);
@@ -245,6 +254,11 @@ int main() {
 
                 printf("Resultado: Carta 1 (%s) venceu!", cidadeO);
 
+            } else if (pibA == pibB) {
+
+                printf("Resultado: Carta 1 (%s) empatou com Carta 2 (%s)!", cidadeO,cidadeT);
+
+            
             } else {
 
                 printf("Resultado: Carta 2 (%s) venceu!", cidadeT);
@@ -259,6 +273,11 @@ int main() {
 
                 printf("Resultado: Carta 1 (%s) venceu!", cidadeO);
 
+            } else if (turisticoA == turisticoB) {
+
+                printf("Resultado: Carta 1 (%s) empatou com Carta 2 (%s)!", cidadeO,cidadeT);
+
+            
             } else {
 
                 printf("Resultado: Carta 2 (%s) venceu!", cidadeT);
@@ -273,6 +292,11 @@ int main() {
 
                 printf("Resultado: Carta 1 (%s) venceu!", cidadeO);
 
+            } else if (densidadeA == densidadeB) {
+
+                printf("Resultado: Carta 1 (%s) empatou com Carta 2 (%s)!", cidadeO,cidadeT);
+
+            
             } else {
 
                 printf("Resultado: Carta 2 (%s) venceu!", cidadeT);
@@ -287,6 +311,11 @@ int main() {
 
                 printf("Resultado: Carta 1 (%s) venceu!", cidadeO);
 
+            } else if (pibPcA == pibPcB) {
+
+                printf("Resultado: Carta 1 (%s) empatou com Carta 2 (%s)!", cidadeO,cidadeT);
+
+            
             } else {
 
                 printf("Resultado: Carta 2 (%s) venceu!", cidadeT);
