@@ -1,71 +1,79 @@
 #include <stdio.h>
 
-void movimentoTorre(int n) {
-    if(n > 0) {
-        printf("Direita\n");
-        movimentoTorre(n - 1);
-    }
-}
-
-void movimentoBispo(int n) {
-    if(n > 0) {
-        printf("Cima\n");
-        printf("Direita\n");
-        movimentoBispo(n - 1);
-    }
-}
-
-void movimentoRainha(int n) {
-    if(n > 0) {
-        printf("Esquerda\n");
-        movimentoRainha(n - 1);
-    }
-}
-
-void movimentoCavalo(int n, int t) {
-    if(n > 0) {
-        printf("Baixo\n");
-        movimentoCavalo(n - 1,t);
-    }
-
-    if(n == 0) {
-        if(t > 0) {
-            printf("Esquerda\n");
-            movimentoCavalo(n,t - 1);
-        }
-        
-    }
-}
-
-
 int main () {
 
+    int tabuleiro[10][10];
+    int e,d;
 
-    // Movimento Torre
-    printf("======== Movimento Torre ============\n\n");
-    movimentoTorre(5);
+    int agua = 0;
 
-    printf("\n");
+    // Setar tabuleiro com agua 0
 
-    // Movimento Bispo
+    for(e = 0;e < 10; e++) {
+        for(d = 0;d < 10; d++) {
+            tabuleiro[e][d] = agua;
+        }
+    }
 
-    printf("======== Movimento Bispo ============\n\n");
-    movimentoBispo(5);
+    // Navios
 
-    printf("\n");
+    int nH[4] = {3, 3 , 3, 3};
+    int nV[4] = {3, 3, 3, 3};
 
-    // Movimento Rainha
+    int nDo[4] = {3,3,3,3};
+    int nDt[4] = {3,3,3,3};
 
-    printf("======== Movimento Rainha ============\n\n");
-    movimentoRainha(8);
+    // Coordenadas dos Navios
 
-    printf("\n");
+    int linhaH = 4;
+    int colunaH = 6;
 
-    // Movimento Cavalo
+    int linhaV = 7;
+    int colunaV = 8;
 
-    printf("======== Movimento Cavalo ============\n\n");
-    movimentoCavalo(2,1);
+    int linhaDo = 5;
+    int colunaDo = 5;
 
-    return 0;
+    int linhaDt = 6;
+    int colunaDt = 7;
+
+    // Posicionar Navios
+
+    // Horizontal
+
+    for (e = 0; e < 4; e++) {
+        tabuleiro[linhaH][colunaH + e] = nH[e];
+    }
+    
+    // Vertical
+
+    for (e = 0; e < 4; e++) {
+        tabuleiro[linhaV + e][colunaV] = nV[e];
+    }
+
+    // Diagonal 
+
+    for (e = 0; e < 4; e++) {
+        tabuleiro[linhaDo + e][colunaDo + e] = nDo[e];
+    }
+
+    for (e = 0; e < 4; e++) {
+        tabuleiro[linhaDt + e][colunaDt - e] = nDt[e];
+    }
+
+    // Exibir o tabuleiro
+
+    printf("===================- Batalha Naval -===================\n\n");
+
+    for(e = 0; e < 10; e++) {
+        for(d = 0; d < 10; d++) {
+            printf("%d ", tabuleiro[e][d]);
+        }
+        printf("\n");
+    }
+
+
+
+
 
 }
